@@ -2,7 +2,6 @@ This was created in order to benchmark some templates with more classes (like wi
 
 Here are the results for me locally. Note that I've made changes to the benchmark script (+ templates) which may skew the results, so take this with a big grain of salt until verified by someone who knows these gems better. 
 
-```
 $ bundle exec ruby -v benchmark/slim/run-benchmarks.rb 
 ruby 2.6.8p205 (2021-07-07 revision 67951) [arm64-darwin21]
 Calculating -------------------------------------
@@ -21,4 +20,3 @@ Comparison:
          slim v4.1.0:   380052.9 i/s - 1.04x slower
        hamlit v3.0.1:   335533.8 i/s - 1.18x slower
        erubi v1.11.0:   309763.0 i/s - 1.28x slower
-```
