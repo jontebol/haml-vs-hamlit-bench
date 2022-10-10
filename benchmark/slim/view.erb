@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<% header = 'some header' %>
+<% item = [] %>
+
+<html>
+  <head>
+    <title>Simple Benchmark</title>
+  </head>
+  <body class="<%= 'relative p-5 m-5 w-64 max-auto' %>">
+    <h1><%== header %></h1>
+    <% unless item.empty? %>
+      <ul>
+      <% for i in item %>
+        <% if i[:current] %>
+          <li><strong><%== i[:name] %></strong></li>
+        <% else %>
+          <li><a href="<%== i[:url] %>"><%== i[:name] %></a></li>
+        <% end %>
+      <% end %>
+      </ul>
+    <% else %>
+      <p>The list is empty.</p>
+    <% end %>
+    <ul class="<%= 'flex flex-row items-center' %>">
+      <% for n in (1..10) %>
+        <li class="<%= 'text-center text-xs md:text-md lg:text-lg xl:text-xl' %>"><%= n %></li>
+      <% end %>
+    </ul>
+  </body>
+</html>

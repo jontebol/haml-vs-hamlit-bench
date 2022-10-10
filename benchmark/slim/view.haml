@@ -1,0 +1,24 @@
+!!! html
+
+- header = 'some header'
+- item = []
+
+%html
+  %head
+    %title Simple Benchmark
+  %body.relative.p-5.m-5.w-64.max-auto
+    %h1= header
+    - unless item.empty?
+      %ul
+        - for i in item
+          - if i[:current]
+            %li
+              %strong= i[:name]
+          - else
+            %li
+              %a{:href => i[:url]}= i[:name]
+    - else
+      %p The list is empty.
+    %ul.flex.flex-row.items-center
+      - for n in (1..10)
+        %li.text-center.text-xs.md:text-md.lg:text-lg.xl:text-xl= n
