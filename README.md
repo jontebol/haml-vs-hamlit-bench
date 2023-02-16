@@ -48,7 +48,7 @@ Comparison:
          haml v5.2.0:   293733.5 i/s - 1.58x slower
 ```
 
-Old results using hamlit 3.0.1:
+Old results using hamlit 3.0.1 (and without haml 5.2.0 escaping html):
 
 ```
 $ bundle exec ruby -v benchmark/slim/run-benchmarks.rb 
