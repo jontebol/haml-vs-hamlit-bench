@@ -2,8 +2,9 @@ This was created in order to benchmark some templates with more classes (like wi
 
 Here are the results for me locally. Note that I've made changes to the benchmark script (+ templates) which may skew the results, so take this with a big grain of salt until verified by someone who knows these gems better. 
 
-UPDATE: I'm happy to report that with some changes to the benchmarks script that made the comparison accurate (haml v5.2.0 wasn't escaping html while the other gems were), and a quick little [fix](https://github.com/k0kubun/hamlit/commit/bc5484f5f342e36d6978c0217b0cc48703529be7) from @k0kubun, hamlit is now coming out on top as expected.
+**UPDATE:** I'm happy to report that with some changes to the benchmarks script that made the comparison accurate (haml v5.2.0 wasn't escaping html while the other gems were), and a quick little [fix](https://github.com/k0kubun/hamlit/commit/bc5484f5f342e36d6978c0217b0cc48703529be7) from [@k0kubun](https://github.com/k0kubun), hamlit is now coming out on top as expected.
 
+```
 $ bundle exec ruby -v benchmark/slim/run-benchmarks.rb
 ruby 2.6.8p205 (2021-07-07 revision 67951) [arm64-darwin21]
 Calculating -------------------------------------
@@ -22,9 +23,11 @@ Comparison:
          slim v4.1.0:   383155.0 i/s - 1.05x slower
          haml v5.2.0:   312471.4 i/s - 1.29x slower
        erubi v1.11.0:   310587.9 i/s - 1.29x slower
+```
 
 For fun, I also tested with Ruby 3.2.1 which gave quite a nice speedup:
 
+```
 $ bundle exec ruby -v benchmark/slim/run-benchmarks.rb
 ruby 3.2.1 (2023-02-08 revision 31819e82c8) [arm64-darwin21]
 Calculating -------------------------------------
@@ -43,9 +46,11 @@ Comparison:
          slim v4.1.0:   445190.9 i/s - 1.04x slower
        erubi v1.11.0:   408614.1 i/s - 1.14x slower
          haml v5.2.0:   293733.5 i/s - 1.58x slower
+```
 
 Old results using hamlit 3.0.1:
 
+```
 $ bundle exec ruby -v benchmark/slim/run-benchmarks.rb 
 ruby 2.6.8p205 (2021-07-07 revision 67951) [arm64-darwin21]
 Calculating -------------------------------------
@@ -64,3 +69,4 @@ Comparison:
          slim v4.1.0:   380052.9 i/s - 1.04x slower
        hamlit v3.0.1:   335533.8 i/s - 1.18x slower
        erubi v1.11.0:   309763.0 i/s - 1.28x slower
+```
