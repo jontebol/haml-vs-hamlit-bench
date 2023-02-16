@@ -7,7 +7,7 @@ GEM
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
-    hamlit (3.0.1)
+    hamlit (3.0.2)
       temple (>= 0.8.2)
       thor
       tilt
@@ -32,7 +32,7 @@ DEPENDENCIES
   benchmark-ips (= 2.3.0)
   erubi
   haml (= 5.2.0)
-  hamlit
+  hamlit (= 3.0.2)
   maxitest
   pry
   slim

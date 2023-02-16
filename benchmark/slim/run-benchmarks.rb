@@ -64,7 +64,7 @@ class SlimBenchmarks
       def run_erubi; #{Erubi::Engine.new(@erb_code).src}; end
       def run_slim; #{Slim::Engine.new.call(@slim_code)}; end
       def run_hamlit; #{Hamlit::Engine.new.call(@haml_code)}; end
-      def run_haml; _hamlout = Object.new; def _hamlout.buffer; @a ||= []; end; #{Haml::Engine.new(@haml_code).precompiled}; end
+      def run_haml; _hamlout = Object.new; def _hamlout.buffer; @a ||= []; end; #{Haml::Engine.new(@haml_code, escape_html: true).precompiled}; end
     }
 
     bench("erubi v#{Erubi::VERSION}") { context.run_erubi } unless @only_haml
